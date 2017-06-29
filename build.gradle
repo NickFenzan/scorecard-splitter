@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+springBoot {
+    executable = true
+}
+
+jar {
+	baseName = 'scorecard'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.3'
+	compile 'org.bouncycastle:bcprov-jdk15on:1.54'
+	compile 'org.bouncycastle:bcmail-jdk15on:1.54'
+	compile 'org.bouncycastle:bcpkix-jdk15on:1.54'
+	
+}
