@@ -23,8 +23,9 @@ public class PDFProcessor {
 		File scorecardPDF = new File(scorecardPDFPath);
 		this.master = PDDocument.load(scorecardPDF);
 		this.createSiteScorecard("Novi", 1);
-		this.createSiteScorecard("Dearborn", 3, 4);
 		this.createSiteScorecard("Troy", 2, 5);
+		this.createSiteScorecard("Dearborn", 3);
+		this.createSiteScorecard("Monroe", 4);
 	}
 	
 //	public void process(String scorecardPDFPath, String callDataPDFPath) throws IOException {
